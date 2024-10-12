@@ -3,7 +3,7 @@ import random
 from discord.ext import commands
 bot = commands.Bot()
 
-
+# いろいろ定義
 
 
 intents = discord.Intents.all()
@@ -11,7 +11,7 @@ client = discord.Client(intents=intents)
 
 TOKEN = "とーくんがはいるばしょ"
 
-
+# きどうメッセ
 @client.event
 async def on_ready():
     print("起動完了")
