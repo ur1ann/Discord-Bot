@@ -1,0 +1,34 @@
+import discord
+import config
+import random
+
+
+
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
+
+TOKEN = "とーくんがはいるばしょ"
+
+
+@client.event
+async def on_ready():
+    print("起動完了")
+   
+@client.event
+async def on_message(message):
+    # 自分には送らん
+    if message.author == client.user:
+        return
+    
+
+    if client.user in message.mentions:
+
+         ansewr_list = ["なんやねん","だるいって","え、きも","しゃべんな","お、おう"]
+        answer = random.choice(ansewr_list)
+        print(answer)
+        await message.channel.send(answer)
+    
+
+
+bot.run("TOKEN")
+
